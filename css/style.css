@@ -1,0 +1,751 @@
+@import "reset.less";
+@import "variable.less";
+@import "mixins.less";
+
+html, body {
+    height: 100%;
+}
+
+body{
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: black;
+    overflow-x: hidden;
+    background: #00aa77;
+    
+    width:100%;
+    padding-top: 50px;
+}
+
+::-webkit-scrollbar{
+    max-width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #009663;
+    background-color: rgba(127, 216, 255, 0.51);
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+// *****Navigation*****
+   
+.navbar ul{
+    list-style: none;
+}
+.navbar ul li{
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    
+}               
+.navbar ul li :hover {
+    border-bottom: 0.2em solid #00623B;
+}
+                
+.navbar ul li :last-child {
+    border-bottom: 0;
+}
+
+/* цвет фона и рамки навигационного меню */
+.navbar-default {
+    background-color: #00aa77;
+    border-color: #00623B;
+    opacity: 0.9;
+}
+/* цвет текста, содержащий название сайта или бренда */
+.navbar-default .navbar-brand {
+    color: #ecf0f1;
+}
+/* цвет текста (название сайта или бренда), при поднесении к нему курсора мышки или при его нахождении в фокусе */
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #00804D;
+}
+/* Цвет пунктов навигационного меню */
+.navbar-default .navbar-nav > li > a {
+    color: #ecf0f1;
+}
+/* Цвет пункта меню, при поднесении к нему курсора мышки или при его нахождении в фокусе */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #00623B;
+}
+/* Цвет и фон активного пункта меню, а также поднесении к нему курсора мышки или при его нахождении в фокусе */
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #00aa77;
+    background-color: #00aa77;
+}
+/* Цвет и фон открытого пункта меню, а также поднесении к нему курсора мышки или при его нахождении в фокусе */
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #00623B;
+    background-color: #78F0CA;
+}
+/* Цвет стрелочки (треугольничка) у раскрывающихся пунктов меню */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #ecf0f1;
+    border-bottom-color: #ecf0f1;
+}
+/* Цвет стрелочки (треугольничка) при поднесении к нему курсора мышки или при его нахождении в фокусе */
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #00623B;
+    border-bottom-color: #00623B;
+}
+/* Цвет стрелочки (треугольничка), открывшегося пункта меню */
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #00623B;
+    border-bottom-color: #00623B;
+}
+/* CSS стили для мобильных устройств */
+/* Цвет рамки у кнопки, которая открывает меню */
+.navbar-default .navbar-toggle {
+    border-color: #00623B;
+}
+/* Цвет фона кнопки (которая открывает меню) при поднесении к ней курсора мышки или при нахождении её в фокусе */
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #00623B;
+}
+/* Цвет полосочек в кнопочке, которая открывает меню */
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ecf0f1;
+}
+/* Цвет пунктов меню в раскрывающихся списках */
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open.dropdown-menu > li > a {
+        color: #A4BAE2;
+  }
+/* Цвет и фон пункта меню в раскрывающихся списках, при поднесении к нему курсора мышки или при нахождении его в фокусе */
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #5459E2;
+        background-color: #7C8DE2;
+    }
+}
+
+.logo{ 
+    font-family: Arial, serif;
+    font-style: italic;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: 1.8em;
+    padding: 0.5em 2em 0 0;
+    font-weight: bold;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    margin-left: -1em; 
+}
+
+.logo span{
+        color: #2754D8;
+        font-weight: bold;
+    }
+
+.dropdown:hover > .dropdown-menu { 
+    display: block; 
+}
+
+/* Заставка */
+.splash { 
+/* Отступ для содержимого, помещенного в splash */
+padding: 2.4em 0 2.1em;
+/* Картинка, которая используются для splash */
+background-image:url(../img/fon9.png);
+background-repeat: repeat;
+
+/* Масштабируем картинку с сохранением пропорций */
+background-size: auto;
+/* Запрещаем фоновому изображению прокручиваться, т.е. делаем его неподвижным */
+/*background-attachment:fixed; */
+/* Цвет текста */
+color: #00ff80;    
+   
+/* Выравниваем текста внутри splash по центру */
+text-align: center;
+font-weight: bold;
+font-size: 3.2em;
+line-height: 1em;
+}
+
+.splash h1{
+ margin-top: -0.4em;
+ font:normal 60px Arial;
+ color: #3B9DAA;
+ text-shadow: 0.06em 0.06em 0.08em #00623B; 
+}
+.splash h1 span {
+    color: #2D5AAF;
+}
+
+.splash img{
+    margin-top: -1em;
+    height: 4em;
+    width: 6em;
+    float: left;
+}
+
+
+// *****page2*****
+
+#page2 {
+    height: 30em;
+    padding-top: 4em;
+    background-image: url("../img/fon7.png");
+    background-repeat: repeat-x, repeat;
+}
+        
+#page2 ul li
+{
+    display: inline-block;
+    margin: 1.5em 2em;
+    line-height: 2em;
+    color: white;
+    
+}    
+            
+#page2 ul li p{
+    margin-top: -1.2em;
+    font-size: 3em;
+    color: #2754d8;
+    margin-bottom: 0.5em;
+}
+
+#page2 ul li span {
+    font-size: 1.2em;
+}
+
+// *****page3*****
+
+#page3 {
+    height: 100%;
+}
+
+.news {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    background-image: url("../img/fon7.png");
+    background-size: auto; 
+    color: #00623B;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+#page3 .carousel-indicators {
+    top: 85%;
+}
+
+.news-indicators .active {
+    background-color: #00623B;
+    border-color: #00623B;
+}
+
+.reviews {
+    margin-top: 1.3em;
+    padding: 0 10px;
+    height: 18em;
+}
+
+.reviews ul{
+    padding: 0 3em;
+}
+
+.reviews ul hr{
+    height: 0.1em;
+    width: 100%;
+    border: none;
+    background-color: #00623B;
+    color: #00623B;
+    float: right;
+    margin-top: 0.3em;
+}
+    
+.reviews ul li{
+    display: block;
+    float: left;
+    width: 25%;
+    height: 12em;
+    margin: 0 1.2em;
+    text-align: center;
+    text-transform: none;
+    border-bottom: 0.1em solid #00623B;
+    position: relative;
+} 
+
+.reviews ul li h3{
+    font-size: 0.6em;
+    font-weight: bold;
+}
+            
+.reviews ul li img{
+    margin-bottom: 0.5em; 
+    height: 5em;
+    width: 5em;  
+}
+            
+.reviews ul li p{ 
+    font-size: 0.45em;
+    font-weight: bold;
+}
+
+.reviews ul li p a{
+    text-decoration: none;
+    color: #00623B; 
+}
+
+.reviews ul li p a:hover {
+    color: orange;  
+}
+
+// *****page4*****
+
+#page4 {
+    margin: 2em 0;
+    color: #fff;
+}
+
+.pupils {
+    margin: 2em 0 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+.section {
+    color: #fff;
+}
+
+.section ul li {
+    display: block;
+    text-align: center;
+    float: left;
+    width: 40%;
+    height: 14em;
+    margin: 1.5em 1.5em 1.5em 5em;
+    padding: 0.5em;
+    text-align: center;
+    text-transform: none;
+    border-radius: 2em;
+    position: relative;
+    background-color: #2F865F;
+}
+
+.section ul li h3 {
+   font-size: 1.2em;
+   color: orange; 
+   font-style: bold;
+}
+.section ul li hr {
+    height: 0.05em;
+}
+
+.section ul li p a {
+    color: #fff;
+}
+
+.section ul li p a:hover {
+    color: orange;
+    text-decoration: none;
+}
+
+// *****page5*****
+
+#page5 {
+    color: #3A4186;
+}
+
+.sportsDepartment {
+    background-image: url("../img/fon10.png");
+    background-size: auto;
+    padding-bottom: 2em;
+}
+
+.sport {
+    margin: 2em 0 1em 0;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #3A4186;
+}
+
+.department ul li {
+    float: left;
+    display: inline-block;
+    text-align: center;
+    margin: 0 1em 2em 5.7em;
+    width: 14em;    
+}
+
+.department ul li a {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #3A4186;
+    padding-left: 1em;
+}
+
+.department ul li a:hover {
+    text-decoration: none;
+    color: orange;
+}
+
+.department img {
+    border-radius: 2em;
+    border: 1px solid #3A4186;
+    height: 15em;
+    width: 15em;
+}
+
+.point {
+    color: gray;
+} 
+
+// *****page6*****
+
+#page6 {
+    height: 100%;  
+}
+
+.gallery {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 2em;
+    color: white;
+    line-height: 1em;
+}
+
+#page6 ul li img {
+    width: 7.5em;
+    height: 7.5em;
+    border: 1px solid #00623B;
+}
+
+#page6 .carousel-indicators {
+    top: 105%;
+}
+
+
+.gallery-btn {
+    width: 48%;
+    margin: 1.7em auto;
+    font-size: 0.5em;
+    font-weight: normal;
+} 
+
+.gallery-btn span{
+        font-size: 1em;
+        display: inline;
+        text-decoration: none;
+        border-bottom: 2px solid #00623B;
+        border-top: 2px solid #00623B;
+        color: white;
+        margin-right: 1em;
+        padding: 0 0.1em;
+        cursor: pointer;
+} 
+
+.gallery-btn :hover{
+    color: #00623B;
+}
+
+#performance {
+    display: none; 
+    margin-bottom: 40%;
+}
+
+#backstage{
+    display: block;
+    margin-bottom: 40%;
+}
+
+.gallery-slider {
+    height: 100%;
+}
+
+.gallery-indicators .active{
+    background-color: white;
+}
+
+.gallery-indicators li{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: white;
+}
+
+// *****page7*****
+
+#page7 {
+    padding-top: 3em;
+    height: 20em;   
+} 
+
+#page7 h1 {
+    font-size: 2em;
+    color: #00623B;
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+}
+
+.contact {
+    padding-top: 3em;
+    background-image: url("../img/fon8.png");
+    background-size: auto;
+    padding-bottom: 2em; 
+}   
+#page7 iframe{
+    border: 0.15em solid #00623B;
+    margin-left: 12em;
+
+}
+
+.icons {
+    border-bottom: 2px solid #00623B;
+    border-top: 2px solid #00623B;
+    width: 18em;
+    height: 2.9em;
+    margin-top: 2em;
+    margin-left: 12em;
+    padding: 0.3em 0;
+}    
+.icons ul li{
+    display: inline-block;
+    padding: 0 0.6em;
+}    
+   
+.address {
+    line-height: 1.3em;
+    padding-left: 6em;
+    padding-top: 2em;
+    font-size: 1.5em;
+    color: #00623B;
+    font-weight: bold;
+}
+    
+.address a {
+    color: #00623B;
+    vertical-align: text-bottom;
+    text-decoration: none;
+}
+
+.address a:hover{
+    color: orange;
+    text-decoration: none;
+}
+    
+.copyright {
+    font-size: 0.7em;
+    font-style: italic;
+    line-height: 1.3em;
+    color: #004A23;
+    margin-left: -10em;
+    margin-top: 2.3em;
+} 
+
+.copyright a{
+    text-decoration: none; 
+    color: #004A23;
+}  
+
+.copyright :hover{
+    color: #D85F1E;
+}
+
+.modal-content {
+    color: darkgrey;
+}
+
+// *****about*****
+
+// *****pageA*****
+
+#pageA {
+    margin-top: 3em;
+}
+   
+.aboutHistory {
+    
+    background-image: url(../img/fon9.png);
+    background-size: auto;
+    height: 100%;
+    height: 100%;
+}    
+.aboutHistory ul{
+    width: 80%;
+    margin: 4em auto 2em;
+    text-align: left;
+    font-size: 1.2em;
+} 
+
+.aboutHistory ul p{
+    margin: 1em auto 1em;
+    color: #00623B;
+    text-align: left;
+}  
+
+.aboutHistory ul span {
+    font-weight: 900;
+}
+
+.kind {
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.aboutHistory ul li{
+    margin: 1em 0;
+    padding: 0 1em;
+    color: #00623B;
+}         
+.aboutHistory ul li:first-child{
+    font-size: 1.8em;
+    text-align: center;
+    padding: 0 1em;
+    font-weight: bold;
+}
+.aboutHistory ul hr {
+    height: 0.15em;
+    width: 100%;
+    background-color: #00623B;
+    float: right;
+    margin-top: 0.3em;
+     
+}
+
+// *****pageB*****
+
+#pageB {
+    background-color: #00aa77; 
+}
+
+.document {
+    background-color: #00aa77;
+    padding-top: 1.5em;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;  
+}
+
+.document ul{
+    padding-top: 0.2em;
+    width: 85%;
+    margin: 0 auto;
+}        
+        
+.document ul li {
+    display: inline-block;
+    height: 10em;
+    width: 15em;
+    font-size: 0.6em;
+    vertical-align: top;
+    margin: 2em 3em 3em 0;
+    text-transform: none;
+    font-weight: 500;
+    border-bottom: 0.2em solid #00623B;
+}
+
+.document ul li hr {
+    color: #00623B;
+    background-color: #00623B;
+}
+
+
+
+// *****pageC*****
+
+#pageC {
+    margin-top: 2em;
+}
+
+.teachers {
+    
+    background-image: url(../img/fon7.png);
+    background-size: auto;
+    color: #00623B;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.teachers ul{
+    padding-top: 0.2em;
+    width: 80%;
+    margin: 0 auto;
+}        
+        
+.teachers ul li {
+    display: inline-block;
+    font-size: 0.6em;
+    height: 14em;
+    width: 25%;
+    margin: 2em 1em 0.5em 0;
+    text-transform: none;
+    border-bottom: 0.2em solid #00623B;
+}
+.teachers ul li h3{
+    font-weight: bold;
+    font-size: 1.1em;
+}
+            
+.teachers ul li hr{
+    color: #00623B;
+    background-color: #00623B;
+    height: 0.15em;
+    width: 100%;
+}
+
+.teachers ul li img{
+    height: 8em;
+    width: 6em;
+}     
+       
+
+
+
+#aboutPage {
+    display: none;
+}
+
+
+@import "media.less";
+
+
+#loginForm {
+    display: none;
+    position: absolute;
+    top: 3.2em;
+    left: 37em;
+    width: 50%;
+    background-color:@colorMenu;
+    padding: 0 1em 1em;
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+    
+    .btn-default{
+        background-color: @red;
+        border-color: @red;
+        font-weight: bold;
+        color: @grey;
+        
+        &:hover{
+            background-color: lighten(@red, 4%);
+            border-color: lighten(@red, 4%);
+        }
+    }
+}
+
